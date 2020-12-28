@@ -1,0 +1,37 @@
+.headerImage {
+  width: 5rem;
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.gridContainer {
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  height: 20vh;
+}
+
+.header h2 {
+  margin: 0 auto;
+}
+
+.contentBox {
+  height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.contentBox::-webkit-scrollbar {
+  display: none;
+}
+
+.footer {
+  height: 5vh;
+  margin-top: 20px;
+}
