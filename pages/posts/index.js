@@ -33,7 +33,7 @@ export default function Posts({ data }) {
   const parser = new DOMParser();
 
   return (
-    <Grid container spacing={3} xs={12} alignContent="left">
+    <Grid container spacing={3}>
       {data.length > 0
         ? data.map((data) => {
             postQueue = postQueue === 5 ? 0 : postQueue;
