@@ -3,7 +3,7 @@
 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼
 # 🏡 Disa Ada's Blog
 
-<img src="https://disaada.github.io/images/profile.png" height="300">
+<img src="./public/images/profile.png" height="300">
 
 ⚙️ Build with [Travis CI](https://travis-ci.org/).
 
