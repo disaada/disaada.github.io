@@ -23,7 +23,7 @@ img {
   display: block;
 }
 
-h2, h4, b {
+h2, h4, h3, b {
   color: #e05c72;
   display: inline;
   margin-right: 10px;

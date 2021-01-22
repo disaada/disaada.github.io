@@ -1,0 +1,19 @@
+.content {
+  text-align: left;
+  margin-top: 5vh;
+}
+
+.content h1{
+  color: black;
+}
+
+.content ul li {
+  color: black;
+}
+
+.profileImage {
+  margin-top: 5vh;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
