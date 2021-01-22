@@ -22,9 +22,9 @@
   display: inline;
 }
 
+
 .headingMd {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  text-align: left;
 }
 
 .borderCircle {

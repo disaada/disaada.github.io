@@ -1,1 +1,6 @@
-. 
+.landingHome {
+  text-align: center;
+  font-size: 40pt;
+  font-weight: bold;
+  line-height: 1;
+}
