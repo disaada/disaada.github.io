@@ -11,15 +11,17 @@ export default function About() {
         justify="flex-end"
         alignItems="flex-start"
       >
-        <Grid item 
-        xs={5} 
-        style={{ 
-          display: 'flex',
-  position: 'fixed',
-  top: '20vh',
-  left: 0,
-  right: 0,
-          }}>
+        <Grid
+          item
+          xs={5}
+          style={{
+            display: "flex",
+            position: "fixed",
+            top: "20vh",
+            left: 100,
+            right: 0,
+          }}
+        >
           <Avatar
             alt="about-me"
             src="/images/about.png"
@@ -27,7 +29,7 @@ export default function About() {
             style={{
               width: "15rem",
               height: "15rem",
-              top: 0
+              top: 0,
             }}
           />
         </Grid>
@@ -51,7 +53,8 @@ export default function About() {
             </li>
             <li>
               This site uses <a href="https://material-ui.com/">Material UI</a>{" "}
-              and <a href="https://emojipedia.org/">Emojipedia</a>
+              , <a href="https://styled-components.com/">styled-components</a>{" "}
+              💅, and <a href="https://emojipedia.org/">Emojipedia</a>
             </li>
             <li>
               The source code is available on{" "}

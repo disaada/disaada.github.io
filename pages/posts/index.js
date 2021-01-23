@@ -8,7 +8,7 @@ import {
   CardContent,
   CardMedia,
   CardActionArea,
-  Chip
+  Chip,
 } from "@material-ui/core";
 // libs
 import DOMParser from "dom-parser";
@@ -34,7 +34,7 @@ export default function Posts({ data }) {
   const parser = new DOMParser();
 
   return (
-    <Grid container spacing={3} direction="row">
+    <Grid container spacing={3} direction="row" style={{ marginLeft: "auto", width: "100%", marginTop: "3vh" }}>
       {data.length > 0
         ? data.map((data) => {
             postQueue = postQueue === 5 ? 0 : postQueue;
@@ -42,7 +42,8 @@ export default function Posts({ data }) {
             const cols = postQueue === 1 || postQueue == 2 ? 6 : 4;
             const html = parser.parseFromString(data.content, "text/html");
             const img = html.getElementsByTagName("img")[0].attributes;
-            const filterImgAttrib = img.filter((val) => val.name === "src")[0].value;
+            const filterImgAttrib = img.filter((val) => val.name === "src")[0]
+              .value;
             const url = filterImgAttrib || "";
             return (
               <Grid key={data.idx} item className={styles.content}>
