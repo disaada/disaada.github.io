@@ -12,19 +12,19 @@ export default function Home() {
       <div>
         <Fade 
           in timeout={2000}
-          style={{ transitionDelay: '5s' }}
+          style={{ transitionDelay: '2s' }}
         >
           <p>Hi! i'm <b>Disa</b> 🙋‍♀️</p>
         </Fade>
         <Fade
           in timeout={2000}
-          style={{ transitionDelay: '7s' }}
+          style={{ transitionDelay: '4s' }}
         >
           <p>I write code 👩‍💻</p>
         </Fade>
         <Fade
           in timeout={2000}
-          style={{ transitionDelay: '9s' }}
+          style={{ transitionDelay: '6s' }}
         >
           <p>I solve things 🕵️‍♀️</p>
         </Fade>
