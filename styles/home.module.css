@@ -3,4 +3,6 @@
   font-size: 40pt;
   font-weight: bold;
   line-height: 1;
+  height: 100%;
+  padding-top: 10vh;
 }

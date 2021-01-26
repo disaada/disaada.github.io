@@ -6,7 +6,7 @@ import styles from "../../styles/layout.module.css";
 export default function Layout({ children, toggleEffect, theme }) {
   return (
     <div>
-      <Container maxWidth="md">
+      <Container maxWidth="xl">
         <Grid
           container
           className={styles.gridContainer}
@@ -17,6 +17,8 @@ export default function Layout({ children, toggleEffect, theme }) {
           <Grid
             item
             xs={12}
+            sm={12}
+            xl={12}
             className={styles.contentBox}
             style={{ margin: "0 auto" }}
           >
@@ -25,6 +27,8 @@ export default function Layout({ children, toggleEffect, theme }) {
           <Grid
             item
             xs={12}
+            sm={12}
+            xl={12}
             className={styles.footer}
             style={{ marginTop: "5vh" }}
           >
