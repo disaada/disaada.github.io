@@ -5,16 +5,16 @@ import styles from "../../styles/layout.module.css";
 
 const content = (theme, siteTitle, toggleEffect) => (
   <div className={styles.header}>
-    <Grid item xs={4}>
+    <Grid item xs={4} sm={12} xl={4}>
       <Link href="/about">
         <h2>🧕 About</h2>
       </Link>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Link href="/posts">
         <h2>📓 Blog</h2>
       </Link>
     </Grid>
-    <Grid item xs={4}>
+    <Grid item xs={4} sm={12} xl={4}>
       <Link href="/">
         <a>
           <img
@@ -26,7 +26,7 @@ const content = (theme, siteTitle, toggleEffect) => (
         </a>
       </Link>
     </Grid>
-    <Grid item xs={4}>
+    <Grid item xs={4} sm={12} xl={4}>
       <b>🌞 Light </b><Switch checked={theme === "dark"} onChange={() => toggleEffect()} /> <b>Dark 🌙</b>
     </Grid>
   </div>
@@ -41,7 +41,7 @@ export default function Header({ toggleEffect, theme }) {
   return (
     <>
       {path === "/" ? (
-        <Fade in timeout={5000} style={{ transitionDelay: "9s" }}>
+        <Fade in timeout={5000} style={{ transitionDelay: "8s" }}>
           {content(theme, siteTitle, toggleEffect)}
         </Fade>
       ) : content(theme, siteTitle, toggleEffect)}

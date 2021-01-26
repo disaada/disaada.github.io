@@ -1,10 +1,5 @@
-// next helpers
-// components
 import { Fade } from '@material-ui/core';
-// libs
-// styles
 import styles from '../styles/home.module.css'
-// api calls
 
 export default function Home() {
   return (

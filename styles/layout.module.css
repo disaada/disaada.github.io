@@ -1,11 +1,13 @@
+/* general */
+.gridContainer {
+  text-align: center;
+}
+
+/* header */
 .headerImage {
   width: 5rem;
   display: block;
   margin: 0 auto;
-}
-
-.gridContainer {
-  text-align: center;
 }
 
 .header {
@@ -20,6 +22,17 @@
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 600px) {
+  .header b {
+    font-size: 8pt;
+  }
+
+  .header h2 {
+    font-size: 12pt;
+  }
+}
+
+/* content */
 .contentBox {
   height: 70vh;
   overflow-y: scroll;
@@ -31,6 +44,12 @@
   display: none;
 }
 
+@media only screen and (min-width: 600px) {
+  .contentBox {
+    height: 70vh;
+  }
+}
+/* footer */
 .footer {
   height: 10vh;
   margin-top: 20px;

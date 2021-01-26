@@ -55,7 +55,7 @@ export default function Footer() {
   return (
     <>
       {path === "/" ? (
-        <Fade in timeout={5000} style={{ transitionDelay: "9s" }}>
+        <Fade in timeout={5000} style={{ transitionDelay: "8s" }}>
           {content(snackbar, setSnackbar, handleCopyEmail)}
         </Fade>
       ) : content(snackbar, setSnackbar, handleCopyEmail)}
