@@ -31,9 +31,13 @@ export async function getStaticPaths() {
   try {
     const res = await getPosts();
     const data = await res.data.items;
-    const paths = data.map((val) => ({ 
-      params: { id: val.id }, 
-    }));
+    const paths = data.map((val) => {
+      return {
+        params: {
+          id: val.id
+        }
+      }
+    });
     return { paths, fallback: false };
   } catch (err) {
     return err;
