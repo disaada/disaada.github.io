@@ -4,33 +4,23 @@
 }
 
 /* header */
-.headerImage {
-  width: 5rem;
-  display: block;
-  margin: 0 auto;
-}
+  .headerImage {
+    width: 5rem;
+    display: block;
+    margin: 0 auto;
+  }
 
-.header {
-  margin-top: 3vh;
-  padding-bottom: 3vh;
-  width: 100%;
-  display: flex;
-  border-bottom: 1px solid #de667a;
-}
-
-.header h2 {
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 600px) {
-  .header b {
-    font-size: 8pt;
+  .header {
+    margin-top: 3vh;
+    padding-bottom: 3vh;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #de667a;
   }
 
   .header h2 {
-    font-size: 12pt;
+    margin: 0 auto;
   }
-}
 
 /* content */
 .contentBox {
@@ -44,7 +34,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .contentBox {
     height: 70vh;
   }

@@ -1,12 +1,26 @@
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, makeStyles } from "@material-ui/core";
 import Header from "./header";
 import Footer from "./footer";
 import styles from "../../styles/layout.module.css";
 
+const useStyles = makeStyles({
+  root: {
+    margin: "0 auto",
+  },
+});
+
+export const screenWidth = window.innerWidth;
+
 export default function Layout({ children, toggleEffect, theme }) {
+  const classes = useStyles();
+  const maxWidth = (screenWidth <= 600) 
+  ? 'sm' :  (screenWidth > 600 && screenWidth <= 960)
+  ? 'md' : (screenWidth > 960 && screenWidth <= 1280)
+  ? 'lg' : 'xl';
+
   return (
     <div>
-      <Container maxWidth="xl">
+      <Container maxWidth={maxWidth}>
         <Grid
           container
           className={styles.gridContainer}
@@ -20,7 +34,8 @@ export default function Layout({ children, toggleEffect, theme }) {
             sm={12}
             xl={12}
             className={styles.contentBox}
-            style={{ margin: "0 auto" }}
+            classes={{ root: classes.root }}
+            style={{ margin: "0 auto", marginTop: "5vh" }}
           >
             {children}
           </Grid>
