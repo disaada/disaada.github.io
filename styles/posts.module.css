@@ -5,6 +5,12 @@
   width: 50vh;
 }
 
+@media only screen and (max-width: 960px) {
+  .content {
+    width: 39vh;
+  }
+}
+
 .media {
   height: 0; 
   padding-top: 56.25%

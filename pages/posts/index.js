@@ -9,6 +9,7 @@ import {
   CardMedia,
   CardActionArea,
   Chip,
+  makeStyles
 } from "@material-ui/core";
 // libs
 import DOMParser from "dom-parser";
@@ -29,12 +30,20 @@ export async function getStaticProps() {
   }
 }
 
+const useStyles = makeStyles({
+  root: { 
+    marginLeft: "auto", 
+    width: "100%", 
+  }
+});
+
 export default function Posts({ data }) {
   let postQueue = 0;
   const parser = new DOMParser();
+  const classes = useStyles();
 
   return (
-    <Grid container spacing={3} direction="row" style={{ marginLeft: "auto", width: "100%", marginTop: "3vh" }}>
+    <Grid container spacing={3} direction="row" className={classes.root}>
       {data.length > 0
         ? data.map((data) => {
             postQueue = postQueue === 5 ? 0 : postQueue;

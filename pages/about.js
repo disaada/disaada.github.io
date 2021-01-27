@@ -2,6 +2,15 @@ import { Avatar, Grid } from "@material-ui/core";
 import styles from "../styles/about.module.css";
 
 export default function About() {
+  const screenWidth = window.innerWidth;
+  const photoStyle = (screenWidth > 960) ? {
+    display: "flex",
+    position: "fixed",
+    top: "20vh",
+    left: 100,
+    right: 0,
+  } : {};
+
   return (
     <div className={styles.content}>
       <Grid
@@ -14,13 +23,8 @@ export default function About() {
         <Grid
           item
           xs={5}
-          style={{
-            display: "flex",
-            position: "fixed",
-            top: "20vh",
-            left: 100,
-            right: 0,
-          }}
+          sm={12}
+          md={12}
         >
           <Avatar
             alt="about-me"
@@ -29,11 +33,10 @@ export default function About() {
             style={{
               width: "15rem",
               height: "15rem",
-              top: 0,
             }}
           />
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={7} sm={12} md={12}>
           <h1>Disa A. Syuhada</h1>
           <ul>
             <li>
