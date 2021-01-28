@@ -4,24 +4,32 @@ import styles from "../styles/about.module.css";
 
 export default function About() {
   const [photoStyle, setPhotoStyle] = useState({});
+  const [photFrame, setPhotoFrame] = useState({});
+  const [screenWidth, setScreenWidth] = useState(600);
 
   useEffect(() => {
-    const screenWidth = window.innerWidth;
-    (screenWidth > 960) 
-    ? setPhotoStyle({
+    setScreenWidth(window.innerWidth);
+
+    if (screenWidth > 960) {
+      setPhotoStyle({
+        width: "15rem",
+        height: "15rem",
+        display: "flex",
+        top: "5vh",
+      })
+      setPhotoFrame({
+        position: 'fixed',
+        right: 0,
+        left: 0
+      })
+    } else {
+      setPhotoStyle({
       width: "15rem",
       height: "15rem",
-      display: "flex",
-      position: "fixed",
-      top: "20vh",
-      left: 100,
-      right: 0,
-    }) 
-    : setPhotoStyle({
-      width: "15rem",
-      height: "15rem",
-    });
-  }, [])
+      });
+      setPhotoFrame({})
+    }
+  }, [screenWidth])
 
   return (
     <div className={styles.content}>
@@ -37,6 +45,8 @@ export default function About() {
           xs={12}
           sm={12}
           md={12}
+          lg={5}
+          style={photFrame}
         >
           <Avatar
             alt="about-me"
@@ -45,7 +55,7 @@ export default function About() {
             style={photoStyle}
           />
         </Grid>
-        <Grid item xs={12} sm={12} md={12}>
+        <Grid item xs={12} sm={12} md={12} lg={7}>
           <h1>Disa A. Syuhada</h1>
           <ul>
             <li>

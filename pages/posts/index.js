@@ -1,6 +1,4 @@
-// next helpers
 import Link from "next/link";
-// components
 import {
   Grid,
   Card,
@@ -11,13 +9,10 @@ import {
   Chip,
   makeStyles
 } from "@material-ui/core";
-// libs
 import DOMParser from "dom-parser";
 import Date from "../../lib/date";
-// styles
 import utilStyles from "../../styles/utils.module.css";
 import styles from "../../styles/posts.module.css";
-// api calls
 import { getPosts } from "../../api/posts";
 
 export async function getStaticProps() {
@@ -38,7 +33,7 @@ const useStyles = makeStyles({
 });
 
 export default function Posts({ data }) {
-  let postQueue = 0;
+  // let postQueue = 0;
   const parser = new DOMParser();
   const classes = useStyles();
 
@@ -46,16 +41,21 @@ export default function Posts({ data }) {
     <Grid container spacing={3} direction="row" className={classes.root}>
       {data.length > 0
         ? data.map((data) => {
-            postQueue = postQueue === 5 ? 0 : postQueue;
+            /* postQueue = postQueue === 5 ? 0 : postQueue;
             postQueue++;
-            const cols = postQueue === 1 || postQueue == 2 ? 6 : 4;
+            const cols = postQueue === 1 || postQueue == 2 ? 6 : 4; */
             const html = parser.parseFromString(data.content, "text/html");
             const img = html.getElementsByTagName("img")[0].attributes;
             const filterImgAttrib = img.filter((val) => val.name === "src")[0]
               .value;
             const url = filterImgAttrib || "";
             return (
-              <Grid key={data.idx} item xs={12} sm={12} className={styles.content}>
+              <Grid 
+                key={data.idx} 
+                item xs={12} 
+                sm={12} md={6}
+                lg={4} xl={3}
+                className={styles.content}>
                 <Link href={`/posts/${data.id}`} key={data.idx}>
                   <Card elevation={3} key={data.id}>
                     <CardActionArea>
