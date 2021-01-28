@@ -5,9 +5,15 @@
   width: 50vh;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (min-width: 499px) and (max-width: 960px) {
   .content {
     width: 39vh;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .content {
+    width: 41vh;
   }
 }
 
