@@ -1,15 +1,27 @@
+import { useState, useEffect } from "react";
 import { Avatar, Grid } from "@material-ui/core";
 import styles from "../styles/about.module.css";
 
 export default function About() {
-  const screenWidth = window.innerWidth;
-  const photoStyle = (screenWidth > 960) ? {
-    display: "flex",
-    position: "fixed",
-    top: "20vh",
-    left: 100,
-    right: 0,
-  } : {};
+  const [photoStyle, setPhotoStyle] = useState({});
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    (screenWidth > 960) 
+    ? setPhotoStyle({
+      width: "15rem",
+      height: "15rem",
+      display: "flex",
+      position: "fixed",
+      top: "20vh",
+      left: 100,
+      right: 0,
+    }) 
+    : setPhotoStyle({
+      width: "15rem",
+      height: "15rem",
+    });
+  }, [])
 
   return (
     <div className={styles.content}>
@@ -30,10 +42,7 @@ export default function About() {
             alt="about-me"
             src="/images/about.png"
             className={styles.profileImage}
-            style={{
-              width: "15rem",
-              height: "15rem",
-            }}
+            style={photoStyle}
           />
         </Grid>
         <Grid item xs={7} sm={12} md={12}>
