@@ -34,7 +34,7 @@ export default function About() {
       >
         <Grid
           item
-          xs={5}
+          xs={12}
           sm={12}
           md={12}
         >
@@ -45,7 +45,7 @@ export default function About() {
             style={photoStyle}
           />
         </Grid>
-        <Grid item xs={7} sm={12} md={12}>
+        <Grid item xs={12} sm={12} md={12}>
           <h1>Disa A. Syuhada</h1>
           <ul>
             <li>

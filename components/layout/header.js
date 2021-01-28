@@ -57,7 +57,7 @@ const content = (
             <List>
               <ListItem button key="2">
                 <ListItemIcon>📓</ListItemIcon>
-                <Link href="/blog">
+                <Link href="/posts">
                   <ListItemText primary="Blog" />
                 </Link>
               </ListItem>
@@ -66,7 +66,7 @@ const content = (
         </Drawer>
       </Hidden>
       {/* --------------------- sm menu ----------------- */}
-      <Hidden only="sm">
+      <Hidden only={['sm', 'xs']}>
         <Link href="/about">
           <h2>🧕 About</h2>
         </Link>
@@ -85,7 +85,7 @@ const content = (
             }`}
             className={`${styles.headerImage}`}
             alt={siteTitle}
-            onClick={() => location.assign("https://disaada.github.io/")}
+            onClick={() => location.assign("https://disaada.site/")}
           />
         </a>
       </Link>
@@ -96,7 +96,7 @@ const content = (
         <Switch checked={theme === "dark"} onChange={() => toggleEffect()} />
         <b>🌙</b>
       </Hidden>
-      <Hidden only="sm">
+      <Hidden only={['sm', 'xs']}>
         <b>🌞 Light </b>
         <Switch checked={theme === "dark"} onChange={() => toggleEffect()} />
         <b>Dark 🌙</b>

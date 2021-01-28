@@ -12,7 +12,7 @@ export default function PostById({ data }) {
   return (
     <section className={utilStyles.headingMd}>
       <p>
-        <div className={utilStyles.backToHome}>
+        <div>
           <Link href="/posts">🔙 Back/Kembali</Link>
         </div>
         <article>
