@@ -12,16 +12,18 @@ const useStyles = makeStyles({
 
 export default function Layout({ children, toggleEffect, theme }) {
   const [maxWidth, setMaxWidth] = useState('md');
+  const [screenWidth, setScreenWidth] = useState(600);
   const classes = useStyles();
 
   useEffect(() => {
-    const screenWidth = window.innerWidth;
+    setScreenWidth(window.innerWidth);
     
-    (screenWidth <= 600) ? setMaxWidth('sm') 
-    : (screenWidth > 600 && screenWidth <= 960) ? setMaxWidth('md') 
-    : (screenWidth > 960 && screenWidth <= 1280) ? setMaxWidth('lg') 
+    (screenWidth > 0 && screenWidth < 600) ? setMaxWidth('xs')
+    : (screenWidth >= 600 && screenWidth < 960) ? setMaxWidth('sm') 
+    : (screenWidth >= 960 && screenWidth < 1280) ? setMaxWidth('md') 
+    : (screenWidth >= 1280 && screenWidth < 1920) ? setMaxWidth('lg') 
     : setMaxWidth('xl');
-  }, [])
+  }, [screenWidth])
 
   return (
     <div>

@@ -24,7 +24,7 @@
 
 /* content */
 .contentBox {
-  height: 70vh;
+  height: 65vh;
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: none;
