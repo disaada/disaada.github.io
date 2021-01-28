@@ -32,7 +32,7 @@ export async function getStaticProps() {
 
 const useStyles = makeStyles({
   root: { 
-    marginLeft: "auto", 
+    margin: "0 auto", 
     width: "100%", 
   }
 });
@@ -55,7 +55,7 @@ export default function Posts({ data }) {
               .value;
             const url = filterImgAttrib || "";
             return (
-              <Grid key={data.idx} item className={styles.content}>
+              <Grid key={data.idx} item xs={12} sm={12} className={styles.content}>
                 <Link href={`/posts/${data.id}`} key={data.idx}>
                   <Card elevation={3} key={data.id}>
                     <CardActionArea>
