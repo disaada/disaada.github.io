@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import Header from "./header";
 import Footer from "./footer";
@@ -9,14 +10,18 @@ const useStyles = makeStyles({
   },
 });
 
-export const screenWidth = window.innerWidth;
-
 export default function Layout({ children, toggleEffect, theme }) {
+  const [maxWidth, setMaxWidth] = useState('md');
   const classes = useStyles();
-  const maxWidth = (screenWidth <= 600) 
-  ? 'sm' :  (screenWidth > 600 && screenWidth <= 960)
-  ? 'md' : (screenWidth > 960 && screenWidth <= 1280)
-  ? 'lg' : 'xl';
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    
+    (screenWidth <= 600) ? setMaxWidth('sm') 
+    : (screenWidth > 600 && screenWidth <= 960) ? setMaxWidth('md') 
+    : (screenWidth > 960 && screenWidth <= 1280) ? setMaxWidth('lg') 
+    : setMaxWidth('xl');
+  }, [])
 
   return (
     <div>
