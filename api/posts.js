@@ -3,7 +3,8 @@ import { SetAuthTokenRequest, checkTokenExpired } from '../config/interceptor'
 import env from '../config/env'
 
 const api = axios.create({
-  baseURL: env.blogger + env.bloggerId
+  baseURL: env.blogger + env.bloggerId,
+  header: {'X-Frame-Options': 'SAMEORIGIN'}
 });
 
 // api.interceptors.request.use(SetAuthTokenRequest, null);
