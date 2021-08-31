@@ -1,11 +1,6 @@
-// next helpers
 import Link from "next/link";
-// components
-// libs
 import Date from "../../lib/date";
-// styles
 import utilStyles from "../../styles/utils.module.css";
-// api calls
 import { getPostsByID, getPosts } from "../../api/posts";
 
 export default function PostById({ data }) {

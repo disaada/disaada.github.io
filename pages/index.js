@@ -9,7 +9,7 @@ export default function Home() {
           in timeout={2000}
           style={{ transitionDelay: '2s' }}
         >
-          <p>Hi! i'm <b>Disa</b> 🙋‍♀️</p>
+          <p>Hi! i&apos;m <b>Disa</b> 🙋‍♀️</p>
         </Fade>
         <Fade
           in timeout={2000}

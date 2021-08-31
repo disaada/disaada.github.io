@@ -5,7 +5,7 @@ import { AlternateEmail, LinkedIn, GitHub, Twitter } from "@material-ui/icons";
 import { Alert } from "@material-ui/lab";
 
 const content = (snackbar, setSnackbar, handleCopyEmail) => (
-  <div>
+  <div style={{ textAlign: 'center' }}>
     <Snackbar
       anchorOrigin={{ vertical: "top", horizontal: "center" }}
       open={snackbar}

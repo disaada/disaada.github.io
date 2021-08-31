@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
     color: #ffffff;
     background-position-y: 100%;
   }
-  
+
   img {
     max-width: 100%;
     display: block;
