@@ -32,75 +32,66 @@ const content = (
   classes
 ) => (
   <div className={styles.header}>
-    {/* --------------------- selain sm ----------------- */}
-    <Grid item xs={4} sm={12} xl={4}>
-      <Hidden only={["xl", "lg", "md"]}>
-        <h2 onClick={() => setOpenDrawer(true)}> 📜 Menu </h2>
-        <Drawer
-          anchor="left"
-          open={openDrawer}
-          onClose={() => setOpenDrawer(false)}
-        >
-          <div className={classes.list}>
-            <br />
-            <h2 style={{ marginLeft: "90px" }}>Menu</h2>
-            <Divider />
-            <List>
-              <ListItem button key="1">
-                <ListItemIcon>🧕</ListItemIcon>
-                <Link href="/about">
-                  <ListItemText primary="About" />
-                </Link>
-              </ListItem>
-            </List>
-            <Divider />
-            <List>
-              <ListItem button key="2">
-                <ListItemIcon>📓</ListItemIcon>
-                <Link href="/posts">
-                  <ListItemText primary="Blog" />
-                </Link>
-              </ListItem>
-            </List>
-          </div>
-        </Drawer>
-      </Hidden>
-      {/* --------------------- sm menu ----------------- */}
-      <Hidden only={['sm', 'xs']}>
-        <Link href="/about">
-          <h2>🧕 About</h2>
-        </Link>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Link href="/posts">
-          <h2>📓 Blog</h2>
-        </Link>
-      </Hidden>
-    </Grid>
-    <Grid item xs={4} sm={12} xl={4}>
-      <Link href="/">
-        <a>
+    <Grid container style={{ textAlign: "center" }}>
+      <Grid item xs={4}>
+        <Hidden only={["xl", "lg"]}>
+          <h2 onClick={() => setOpenDrawer(true)}> 📜 Menu </h2>
+          <Drawer
+            anchor="left"
+            open={openDrawer}
+            onClose={() => setOpenDrawer(false)}
+          >
+            <div className={classes.list}>
+              <br />
+              <h2 style={{ marginLeft: "90px" }}>Menu</h2>
+              <Divider />
+              <List>
+                <ListItem button key="1">
+                  <ListItemIcon>🧕</ListItemIcon>
+                  <Link href="/about">
+                    <ListItemText primary="About" />
+                  </Link>
+                </ListItem>
+              </List>
+              <Divider />
+              <List>
+                <ListItem button key="2">
+                  <ListItemIcon>📓</ListItemIcon>
+                  <Link href="/posts">
+                    <ListItemText primary="Blog" />
+                  </Link>
+                </ListItem>
+              </List>
+            </div>
+          </Drawer>
+        </Hidden>
+      </Grid>
+      <Grid item xs={4} style={{ display: "flex", flexDirection: "row" }}>
+        <Hidden only={["xs", "sm", "md"]}>
+          <Link href="/about">
+            <h2>🧕 About</h2>
+          </Link>
+        </Hidden>
+        <Link href="/">
           <img
             src={`/images/${
               theme === "light" ? "profile-light.png" : "profile-dark.png"
             }`}
             className={`${styles.headerImage}`}
             alt={siteTitle}
-            onClick={() => location.assign("https://disaada.site/")}
           />
-        </a>
-      </Link>
-    </Grid>
-    <Grid item xs={4} sm={12} xl={4}>
-      <Hidden only={["xl", "lg", "md"]}>
+        </Link>
+        <Hidden only={["xs", "sm", "md"]}>
+          <Link href="/posts">
+            <h2>📓 Blog</h2>
+          </Link>
+        </Hidden>
+      </Grid>
+      <Grid item xs={4}>
         <b>🌞</b>
-        <Switch checked={theme === "dark"} onChange={() => toggleEffect()} />
+        <Switch checked={theme === "dark"} onChange={toggleEffect} />
         <b>🌙</b>
-      </Hidden>
-      <Hidden only={['sm', 'xs']}>
-        <b>🌞 Light </b>
-        <Switch checked={theme === "dark"} onChange={() => toggleEffect()} />
-        <b>Dark 🌙</b>
-      </Hidden>
+      </Grid>
     </Grid>
   </div>
 );

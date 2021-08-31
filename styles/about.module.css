@@ -1,9 +1,4 @@
 .content {
   text-align: left;
-}
-
-.profileImage {
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }

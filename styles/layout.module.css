@@ -6,16 +6,14 @@
 /* header */
   .headerImage {
     width: 5rem;
+    height: fit-content;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
   }
 
   .header {
     margin-top: 3vh;
-    padding-bottom: 3vh;
-    width: 100%;
-    display: flex;
-    border-bottom: 1px solid #de667a;
   }
 
   .header h2 {
@@ -24,23 +22,12 @@
 
 /* content */
 .contentBox {
-  height: 65vh;
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: none;
+  padding: 10vh 0;
 }
 
 .contentBox::-webkit-scrollbar {
   display: none;
-}
-
-@media only screen and (max-width: 600px) {
-  .contentBox {
-    height: 70vh;
-  }
-}
-/* footer */
-.footer {
-  height: 10vh;
-  margin-top: 20px;
 }
