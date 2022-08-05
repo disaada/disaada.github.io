@@ -1,33 +1,14 @@
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/',
-        headers: [
-          {
-            key: 'x-frame-options',
-            value: 'SAMEORIGIN',
-          }
-        ],
-      },
-      {
-        source: '/:path',
-        headers: [
-          {
-            key: 'x-frame-options',
-            value: 'SAMEORIGIN',
-          }
-        ],
-      },
-      {
-        source: '/:path/:slug',
-        headers: [
-          {
-            key: 'x-frame-options',
-            value: 'SAMEORIGIN',
-          }
-        ],
-      }
-    ]
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
   },
+  images: {
+    domains: ['loremflickr.com']
+  }
 }
+
+module.exports = nextConfig
